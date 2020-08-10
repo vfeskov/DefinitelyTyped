@@ -8,10 +8,12 @@ import * as nodemailer from "nodemailer";
 
 declare namespace sesTransport {
     interface SesOptions extends AWS.SES.Types.ClientConfiguration {
-        ses?: AWS.SES;
-        AWSAccessKeyID?: string
-        AWSSecretKey?: string
-        AWSSecurityToken?: string
+        ses: AWS.SES;
+        ServiceUrl?: string;
+        AWSAccessKeyID?: string;
+        AWSSecretKey?: string;
+        AWSSecurityToken?: string;
+        hostOptions?: AWS.HTTPOptions;
     }
 }
 

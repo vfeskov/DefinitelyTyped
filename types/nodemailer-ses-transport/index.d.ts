@@ -3,12 +3,13 @@
 // Definitions by: Seth Westphal <https://github.com/westy92>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-import * as AWS from "aws-sdk";
-import * as nodemailer from "nodemailer";
+import * as AWS from 'aws-sdk';
+import * as nodemailer from 'nodemailer';
 
 declare namespace sesTransport {
     interface SesOptions extends AWS.SES.Types.ClientConfiguration {
         ses: AWS.SES;
+        rateLimit?: number;
         ServiceUrl?: string;
         AWSAccessKeyID?: string;
         AWSSecretKey?: string;

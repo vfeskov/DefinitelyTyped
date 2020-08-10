@@ -7,11 +7,8 @@ import * as AWS from "aws-sdk";
 import * as nodemailer from "nodemailer";
 
 declare namespace sesTransport {
-    interface SesOptions {
+    interface SesOptions extends AWS.SES.Types.ClientConfiguration {
         ses?: AWS.SES;
-        component?: string;
-        maxConnections?: number;
-        sendingRate?: number;
         AWSAccessKeyID?: string
         AWSSecretKey?: string
         AWSSecurityToken?: string

@@ -3,10 +3,8 @@ import * as nodemailer from "nodemailer";
 import sesTransport = require('nodemailer-ses-transport');
 
 const opts: sesTransport.SesOptions = {
-  SES: new AWS.SES(),
-  component: "string",
-  sendingRate: 5,
-  maxConnections: 3
+  ses: new AWS.SES(),
+  rateLimit: 5
 };
 
 const transport: nodemailer.Transport = sesTransport(opts);
